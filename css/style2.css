@@ -1,146 +1,131 @@
+/* Style général du corps du document */
 body {
-   font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif; /* Définit la police de caractère du corps */
 }
-  
+ 
+/* Style de la balise legend */
 legend {
-   text-align: center;
-   color: #ffffff;
-   display: flex;
-   font-size: 1.4em;
-   margin-bottom: 10px;
+  text-align: center; /* Centre le texte à l'intérieur de la balise */
+  color: #ffffff; /* Définit la couleur du texte */
+  display: flex; /* Utilise un conteneur flexible */
+  font-size: 1.4em; /* Définit la taille de la police */
+  margin-bottom: 10px; /* Ajoute une marge en bas */
 }
 
-
-
+/* Style général du formulaire */
 form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: auto;
+   display: flex; /* Utilise un conteneur flexible */
+   flex-direction: column; /* Aligne les éléments en colonne */
+   width: 100%; /* Prend toute la largeur disponible */
+   margin: auto; /* Centre le formulaire */
 }
 
+/* Style des champs de saisie de type text, email et textarea */
+input[type="text"], input[type="email"], textarea {
+ width: 100%; /* Prend toute la largeur disponible */
+ padding: 10px; /* Ajoute un espacement interne */
+ border: 1px solid #ccc; /* Définit une bordure grise */
+ border-radius: 4px; /* Arrondit les coins */
+ box-sizing: border-box; /* Inclut la bordure et le padding dans la largeur totale */
+ margin-bottom: 2px; /* Ajoute une petite marge en bas */
+}
 
-input[type="text"],input[type="email"],textarea{
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-bottom: 2px;
-}  
+/* Style des champs de saisie de type password */
+input[type="password"] {
+ width: 100%; /* Prend toute la largeur disponible */
+ padding: 10px; /* Ajoute un espacement interne */
+ border: 1px solid #ccc; /* Définit une bordure grise */
+ border-radius: 4px; /* Arrondit les coins */
+ box-sizing: border-box; /* Inclut la bordure et le padding dans la largeur totale */
+ margin-bottom: 2px; /* Ajoute une petite marge en bas */
+}
 
-input[type="password"]{
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-bottom: 2px;
-}  
-
+/* Style des labels */
 label {
-  display: block;
-  margin-bottom: 10px;
-  color: #ffffff;
+ display: block; /* Affiche les labels en tant que blocs */
+ margin-bottom: 10px; /* Ajoute une marge en bas */
+ color: #ffffff; /* Définit la couleur du texte */
 }
-  
 
-  
+/* Style du bouton de soumission */
 input[type="submit"] {
-   
-    
-    position: relative;
-    padding: 20px;
-    font-size: 18px;
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 2px;
-    margin-top: 8px;
-    width: 100%;
-    font-size: 18px;
-    font-style: bold;
-    color: rgb(255, 255, 255);
-    background-color: rgba(18, 28, 63, 0.884);
-    cursor: pointer;
-  }
-  
+   position: relative; /* Position relative pour ajustements futurs */
+   padding: 20px; /* Ajoute un espacement interne */
+   font-size: 18px; /* Définit la taille de la police */
+   border: 1px solid rgb(255, 255, 255); /* Définit une bordure blanche */
+   border-radius: 2px; /* Arrondit légèrement les coins */
+   margin-top: 8px; /* Ajoute une marge en haut */
+   width: 100%; /* Prend toute la largeur disponible */
+   font-style: bold; /* Définit le style de la police en gras */
+   color: rgb(255, 255, 255); /* Définit la couleur du texte */
+   background-color: rgba(18, 28, 63, 0.884); /* Définit la couleur de fond avec transparence */
+   cursor: pointer; /* Change le curseur au survol */
+}
+
+/* Style du bouton de soumission au survol */
 input[type="submit"]:hover {
-  background-color: #ff9479;
+ background-color: #ff9479; /* Change la couleur de fond au survol */
 }
 
-
+/* Style de la section de fond vidéo */
 .video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+ position: fixed; /* Fixe la position de la vidéo en arrière-plan */
+ top: 0; /* Place la vidéo en haut */
+ left: 0; /* Place la vidéo à gauche */
+ width: 100%; /* Prend toute la largeur */
+ height: 100%; /* Prend toute la hauteur */
+ overflow: hidden; /* Cache le dépassement de contenu */
 }
 
+/* Style de la vidéo de fond */
 .video-background video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+ position: absolute; /* Position absolue par rapport au conteneur parent */
+ top: 0; /* Place la vidéo en haut */
+ left: 0; /* Place la vidéo à gauche */
+ width: 100%; /* Prend toute la largeur */
+ height: 100%; /* Prend toute la hauteur */
+ object-fit: cover; /* Couvre toute la zone de manière proportionnelle */
 }
 
+/* Style du conteneur de formulaire */
 .form-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.297);
-  border-radius: 10px;
-  width: 50%;
+ position: absolute; /* Position absolue pour centrer */
+ top: 50%; /* Centre verticalement */
+ left: 50%; /* Centre horizontalement */
+ transform: translate(-50%, -50%); /* Ajuste la position pour un vrai centrage */
+ padding: 10px; /* Ajoute un espacement interne */
+ background-color: rgba(0, 0, 0, 0.297); /* Définit la couleur de fond avec transparence */
+ border-radius: 10px; /* Arrondit les coins */
+ width: 50%; /* Définit la largeur du conteneur */
 }
 
-
-
-
-
+/* Style de la classe mot (message d'avertissement ou information) */
 .mot {
-    color: rgb(128, 25, 25);
-    background-color: #ffffff;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-    height: 10%; 
-
-    top: 0;
-    left: 0;
-    width: 100%;
-    box-sizing: border-box;
+   color: rgb(128, 25, 25); /* Définit la couleur du texte */
+   background-color: #ffffff; /* Définit la couleur de fond */
+   padding-top: 10px; /* Ajoute un espacement en haut */
+   padding-bottom: 10px; /* Ajoute un espacement en bas */
+   text-align: center; /* Centre le texte */
+   height: 10%; /* Définit la hauteur */
+   top: 0; /* Place l'élément en haut */
+   left: 0; /* Place l'élément à gauche */
+   width: 100%; /* Prend toute la largeur */
+   box-sizing: border-box; /* Inclut la bordure et le padding dans la largeur totale */
 }
 
+/* Style des paragraphes à l'intérieur de .mot */
 .mot p {
-    color: black;
+   color: black; /* Définit la couleur du texte */
 }
-p{
-    display: inline block;
-    color: white;
+
+/* Style général des paragraphes */
+p {
+   display: inline block; /* Affiche les paragraphes en tant que blocs en ligne */
+   color: white; /* Définit la couleur du texte */
 }
+
+/* Style des liens à l'intérieur de .mot */
 .mot a {
-    text-decoration: none;
-    color: rgb(0, 77, 144);
+   text-decoration: none; /* Supprime la décoration des liens (soulignement) */
+   color: rgb(0, 77, 144); /* Définit la couleur des liens */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
