@@ -1,66 +1,58 @@
 <?php
-
-
-
-
-
-
-
-// Récupérer les valeurs saisies dans le formulaire de réinitialisation de mot de passe
+// Récupération des valeurs saisies dans le formulaire de réinitialisation de mot de passe
 $mail = $_POST['email'];
 $mdp = $_POST['password'];
 $Cmdp = $_POST['password_confirm'];
 
-// Vérifier la correspondance des mots de passe
+// Vérification de la correspondance des mots de passe
 if ($mdp == $Cmdp) {
-    // Se connecter à la base de données
+    // Connexion à la base de données
     $user = 'root';
-    $password = 'root';
+    $password = 'Root';
     $db = 'formulaires';
     $host = 'localhost';
-    $port = 3307;
 
-    $connexion = mysqli_connect($host, $user, $password, $db, $port);
+    $connexion = mysqli_connect($host, $user, $password, $db);
 
-    // Vérifier si la connexion a réussi
+    // Vérification de la réussite de la connexion
     if (!$connexion) {
+        // Affichage d'un message d'erreur en cas d'échec de connexion
         die("La connexion a échoué : " . mysqli_connect_error());
     }
 
-    // Vérifier si l'utilisateur avec cette adresse e-mail existe dans la base de données
+    // Vérification de l'existence de l'utilisateur avec cette adresse e-mail dans la base de données
     $requete = "SELECT * FROM user WHERE mail = '$mail'";
     $resultat = mysqli_query($connexion, $requete);
 
+    // Vérification de la réussite de la requête
     if (!$resultat) {
+        // Affichage d'un message d'erreur en cas d'échec de la requête
         die("La requête a échoué : " . mysqli_error($connexion));
     }
 
+    // Si l'utilisateur existe dans la base de données, mettre à jour son mot de passe
     if (mysqli_num_rows($resultat) > 0) {
-        // L'utilisateur existe, mettre à jour le mot de passe dans la base de données
+        // Mise à jour du mot de passe dans la base de données
         $requete = "UPDATE user SET mdp = '$mdp' WHERE mail = '$mail'";
         $resultat = mysqli_query($connexion, $requete);
 
+        // Vérification de la réussite de la mise à jour
         if (!$resultat) {
+            // Affichage d'un message d'erreur en cas d'échec de la mise à jour
             die("La requête a échoué : " . mysqli_error($connexion));
         }
 
+        // Affichage d'un message de succès
         echo "Le mot de passe a été réinitialisé avec succès.";
     } else {
-        // L'utilisateur n'existe pas
+        // L'utilisateur n'existe pas dans la base de données
         echo "Aucun utilisateur avec cette adresse e-mail n'a été trouvé.";
     }
 
-    // Fermer la connexion à la base de données
+    // Fermeture de la connexion à la base de données
     mysqli_close($connexion);
 } else {
+    // Les mots de passe ne correspondent pas
     echo "Les mots de passe ne correspondent pas.";
 }
-
-
-
-
-
-
-
-
 ?>

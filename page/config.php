@@ -3,10 +3,9 @@
 
 
 $user = 'root';
-$password = 'root';
+$password = 'Root';
 $db = 'formulaires';
 $host = 'localhost';
-$port = 3307;
 
 
 

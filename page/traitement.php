@@ -10,7 +10,7 @@ $Cmdp = $_POST['password_confirm'];
 if ($mdp == $Cmdp) {
     // Se connecter à la base de données
     $user = 'root'; // Nom d'utilisateur de la base de données
-    $password = ''; // Mot de passe de la base de données
+    $password = 'Root'; // Mot de passe de la base de données
     $db = 'formulaire'; // Nom de la base de données
     $host = 'localhost'; // Hôte de la base de données
 
